@@ -1,2 +1,2 @@
 # config-deploy
-coniguration and deployment wrapped up into one. lets go!
+configuration and deployment wrapped up into one. lets go!
