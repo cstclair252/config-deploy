@@ -22,14 +22,17 @@ jobs:
                 --region us-east-1
     configure_infrastructure:
         docker: 
-          - image: python:3.7-alpine3.11
+          - image: python:3.9.16
         steps:
           - checkout
           - add_ssh_keys:    
               fingerprints: ["b6:ac:d1:4f:f5:d6:03:99:b4:07:47:42:b2:93:de:dc"] 
           - run:
               name: Install Ansible
-              command: apk add --update ansible
+              command: |
+                apt-get update -y
+                apt install ansible -y
+                which ansible
 
           #run the ansible playbook
           - run: 
