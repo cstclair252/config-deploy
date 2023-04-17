@@ -25,18 +25,17 @@ jobs:
           - image: python:3.7-alpine3.11
         steps:
           - checkout
-          - add_ssh_keys:
-      		# You can get this ID in the section where you registered the SSH Key
-          	fingerprints: ["b6:ac:d1:4f:f5:d6:03:99:b4:07:47:42:b2:93:de:dc"] 
+          - add_ssh_keys:    
+              fingerprints: ["b6:ac:d1:4f:f5:d6:03:99:b4:07:47:42:b2:93:de:dc"] 
           - run:
               name: Install Ansible
-              command: |
-                apk update && apk add ansible
+              command: apk add --update ansible
+
           #run the ansible playbook
-          -run: 
-            name: configure server
-            command: |
-              ansible-playbook -i inventory.txt main1.yml
+          - run: 
+              name: configure server
+              command: |
+                ansible-playbook -i inventory.txt main1.yml
 
 # Sequential workflow
 workflows:
