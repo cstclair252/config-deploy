@@ -20,7 +20,6 @@ jobs:
                 --template-file template.yml \
                 --stack-name myxStack-${CIRCLE_WORKFLOW_ID:0:5} \
                 --region us-east-1
-                --tags Name=AnsibleRemote
     configure_infrastructure:
         docker: 
           - image: python:3.9.16
