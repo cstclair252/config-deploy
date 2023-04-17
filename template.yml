@@ -15,7 +15,7 @@
        InstanceType: t3.micro
         Tags:
           - Key: Name
-            Value: Ansible Remote
+            Value: "Ansible Remote"
    InstanceSecurityGroup:
      Type: 'AWS::EC2::SecurityGroup'
      Properties:

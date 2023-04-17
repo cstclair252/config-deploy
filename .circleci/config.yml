@@ -16,11 +16,11 @@ jobs:
           - run: 
               name: Create Cloudformation Stack command
               command: |
-                  aws cloudformation deploy \
-                  --template-file template.yml \
-                  --stack-name myxStack-${CIRCLE_WORKFLOW_ID:0:5} \
-                  --region us-east-1 \
-                  --tags Key=Name, Value=ARS
+                aws cloudformation deploy \
+                --template-file template.yml \
+                --stack-name myxStack-${CIRCLE_WORKFLOW_ID:0:5} \
+                --region us-east-1 \
+                --tags Key=Name, Value=ARS
     configure_infrastructure:
         docker: 
           - image: python:3.9.16
